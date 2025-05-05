@@ -11,7 +11,7 @@ use Google\Cloud\DocumentAI\V1\RawDocument;
 
 class DocumentAIService
 {
-    protected $app;
+    protected $config;
 
     public const PROJECT_ID_CONFIG = 'joinapi.gcp.docai.project';
 
@@ -27,9 +27,9 @@ class DocumentAIService
 
     protected DocumentProcessorServiceClient $client;
 
-    public function __construct($app)
+    public function __construct($config)
     {
-        $this->app = $app;
+        $this->config = $config;
 
         $this->client = new DocumentProcessorServiceClient();
 
